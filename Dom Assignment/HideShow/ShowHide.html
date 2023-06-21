@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Double Tab To Hide and Show</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+
+        }
+        body{
+            height: 100vh;
+            width: 100%;
+            background-color: antiquewhite;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            
+        }
+        .container{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 30vh;
+            width: 25%;
+            box-shadow:  0 0 10px burlywood;
+        }
+        p{
+         font-weight: 600;
+         margin: 25px;
+         color: #145288;
+        }
+
+        button{
+            padding: 2px 8px;
+            box-shadow:  0 0 10px burlywood;
+            cursor: pointer;
+            font-weight: 600;
+            color: #145288;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <p id="lorem_para">Lorem ipsum dolor sit amet.</p>
+        <button id="hideShow">Double Tab to Hide and Show</button>
+    </div>
+</body>
+<script>
+    const lorem_para = document.querySelector("#lorem_para")
+    const hideShow = document.querySelector("#hideShow")
+function hide(){
+
+    if(lorem_para.style.display !="none")
+    {
+        lorem_para.style.display ="none"
+    }
+    else{
+    lorem_para.style.display ="block"
+}
+}
+hideShow.addEventListener("dblclick",hide)
+</script>
+</html>

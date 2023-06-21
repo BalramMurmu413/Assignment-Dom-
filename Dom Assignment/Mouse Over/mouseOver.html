@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mouse Over to change Background Color</title>
+
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+
+
+        }
+body{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+        .btns{
+            height:70px;
+            width: 100px;
+            margin: 2px;
+            background: var(--color) ;
+            cursor: pointer;
+        }
+
+        .btns1{
+            --color:red;
+        }
+        .btns2{
+            --color:blue;
+        }
+        .btns3{
+            --color:pink;
+        }
+        .btns4{
+            --color:grey;
+        }
+        .btns5{
+            --color:green;
+        }
+        .btns6{
+            --color:orange;
+        }
+        .btns7{
+            --color:yellow;
+        }
+        .btns8{
+            --color:black;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+    <h2>Hover on Color to Chagne Background Color</h2>
+    <button class="btns btns1"></button>
+    <button class="btns btns2" ></button>
+    <button class="btns btns3"></button>
+    <button class="btns btns4"></button> <br>
+    <button class="btns btns5"></button>
+    <button class="btns btns6"></button>
+    <button class="btns btns7"></button>
+    <button class="btns btns8"></button>
+</div>
+</body>
+<script>
+    const btns = document.getElementsByClassName("btns")
+    for(let i = 0;i < btns.length; i++){
+        btns[i].addEventListener("mouseover", function(){
+            let colorButton = getComputedStyle(this)
+            let buttonColor = colorButton["backgroundColor"]
+            document.body.style.backgroundColor = buttonColor;
+        }); }
+</script>
+</html>
